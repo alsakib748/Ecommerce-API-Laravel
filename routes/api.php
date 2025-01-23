@@ -18,14 +18,21 @@ Route::get('/BrandList', [BrandController::class, 'BrandList']);
 Route::get('/BrandEdit/{id}', [BrandController::class, 'BrandEdit'])->middleware([TokenWebAuthenticate::class]);
 Route::post('/BrandUpdate', [BrandController::class, 'BrandUpdate'])->middleware([TokenWebAuthenticate::class]);
 Route::post('/BrandDelete', [BrandController::class, 'BrandDelete'])->middleware([TokenWebAuthenticate::class]);
+
 //todo: Category List
-
+Route::post('/CategoryCreate', [CategoryController::class, 'CategoryCreate'])->middleware([TokenWebAuthenticate::class]);
 Route::get('/CategoryList', [CategoryController::class, 'CategoryList']);
+Route::get('/CategoryEdit/{id}', [CategoryController::class, 'CategoryEdit'])->middleware([TokenWebAuthenticate::class]);
+Route::post('/CategoryUpdate', [CategoryController::class, 'CategoryUpdate'])->middleware([TokenWebAuthenticate::class]);
+Route::post('/CategoryDelete', [CategoryController::class, 'CategoryDelete'])->middleware([TokenWebAuthenticate::class]);
 
-// Product List
+//todo: Product List
+Route::post('/ProductCreate', [ProductController::class, 'ProductCreate'])->middleware([TokenWebAuthenticate::class]);
+
 Route::get('/ListProductByCategory/{id}', [ProductController::class, 'ListProductByCategory']);
 Route::get('/ListProductByBrand/{id}', [ProductController::class, 'ListProductByBrand']);
 Route::get('/ListProductByRemark/{remark}', [ProductController::class, 'ListProductByRemark']);
+
 // Slider
 Route::get('/ListProductSlider', [ProductController::class, 'ListProductSlider']);
 // Product Details

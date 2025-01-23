@@ -11,6 +11,8 @@ class ProductDetail extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function product(): BelongsTo{
         return $this->belongsTo(Product::class);
     }
@@ -22,5 +24,5 @@ class ProductDetail extends Model
     public function category(): BelongsTo{
         return $this->belongsTo(Category::class);
     }
-    
+
 }
